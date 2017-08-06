@@ -14,18 +14,16 @@
 <meta name="author" content="降临の神呦" />
 
 
+    
+    
 
-<meta name="description" content="常用方法compile, match, findall, finditer, search, split, sub.123456789101112131415import reurl = &amp;quot;http://10.128.39.48:8058/net_command&amp;quot;# 编译一个正则表达式对象reg, # reg有多个方法可以调用,如re.match(), re.findall()">
-<meta name="keywords" content="python">
-<meta property="og:type" content="article">
-<meta property="og:title" content="re">
-<meta property="og:url" content="http://yoursite.com/2017/05/15/re/index.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="神の宫殿">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="神の宫殿">
-<meta property="og:description" content="常用方法compile, match, findall, finditer, search, split, sub.123456789101112131415import reurl = &amp;quot;http://10.128.39.48:8058/net_command&amp;quot;# 编译一个正则表达式对象reg, # reg有多个方法可以调用,如re.match(), re.findall()">
-<meta property="og:updated_time" content="2017-08-06T06:48:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="re">
-<meta name="twitter:description" content="常用方法compile, match, findall, finditer, search, split, sub.123456789101112131415import reurl = &amp;quot;http://10.128.39.48:8058/net_command&amp;quot;# 编译一个正则表达式对象reg, # reg有多个方法可以调用,如re.match(), re.findall()">
+<meta name="twitter:title" content="神の宫殿">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -53,11 +51,13 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
+    <style> .article { opacity: 0;} </style>
+
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>re | 神の宫殿</title>
+<title>神の宫殿</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,8 +66,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: false,
-        isPost: true,
+        isHome: true,
+        isPost: false,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -257,11 +257,13 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-re" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
+  
+    <article id="post-回调函数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/05/15/re/" class="article-date">
-      <time datetime="2017-05-15T06:21:37.000Z" itemprop="datePublished">2017-05-15</time>
+      <a href="/2016/08/06/回调函数/" class="article-date">
+      <time datetime="2016-08-06T07:51:05.000Z" itemprop="datePublished">2016-08-06</time>
 </a>
 
 
@@ -275,135 +277,35 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      re
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/06/回调函数/">回调函数</a>
     </h1>
   
 
       </header>
       
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
     
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="常用方法compile-match-findall-finditer-search-split-sub"><a href="#常用方法compile-match-findall-finditer-search-split-sub" class="headerlink" title="常用方法compile, match, findall, finditer, search, split, sub."></a>常用方法compile, match, findall, finditer, search, split, sub.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">import re</div><div class="line">url = &quot;http://10.128.39.48:8058/net_command&quot;</div><div class="line"># 编译一个正则表达式对象reg, </div><div class="line"># reg有多个方法可以调用,如re.match(), re.findall(), re.sub()等</div><div class="line">reg = re.compile(&apos;^http:\/\/(.*?):(\d+?)\/net_command&apos;)</div><div class="line"># 针对url,执行正则匹配,然后通过group()来取得匹配结果</div><div class="line">result = reg.match(url)</div><div class="line">result.group()</div><div class="line">&apos;http://10.128.39.48:8058/net_command&apos;</div><div class="line">result.group(0)</div><div class="line">&apos;http://10.128.39.48:8058/net_command&apos;</div><div class="line">result.group(1)</div><div class="line">&apos;10.128.39.48&apos;</div><div class="line">result.group(2)</div><div class="line">&apos;8058&apos;</div></pre></td></tr></table></figure>
-<ol>
-<li>compile<br>预先编译好正则表达式,可为之后的重复使用节省时间.</li>
-<li><p>re.match(‘p’, ‘python’) 会在字符串的开头匹配正则表达式: 如果开头即不符合,则匹配失败.<br>而re.search(‘net_command’, url)会扫描整个字符串,直到找到第一个匹配结果返回. 二者的匹配结果也可通过group()方法来获取. </p>
-</li>
-<li><p>re.findall(‘net_command’, url) 会查找所有匹配结果,并返回结果列表. 而re.finditer()找到匹配结果,将它们作为一个迭代器返回.</p>
-</li>
-<li><p>re.sub(‘net_command’, ‘command_net’, url) 用于匹配结果的替换操作, 等同于 url.replace(‘net_command’, ‘command_net’). sub()方法的第四个参数表示替换次数,默认0为全部替换. </p>
-</li>
-<li><p>re.split(‘/‘, url), 等同于 url.split(‘/‘), split()方法的第三个参数表示分割次数,默认0为全部. </p>
-</li>
-<li><p>start(), end(), 分别表示匹配结果的开始和结束索引. 而span()则返回开始和结束索引组成的元组. </p>
-</li>
-<li><p>正则表达式参数, re.VERBOSE(或re.X)可使正则表达式结构化,形式更易读. re.DOTALL(或re.S)使得 . 匹配包括换行符在内的任意字符. re.IGNORECASE(或re.I)使得匹配对大小写不敏感. re.MULTILINE(或re.M)使得多行匹配生效,影响^和$的首尾匹配. </p>
-</li>
-<li><p>相比于re模块,我们应该尽可能地使用字符串自身的一些操作方法, 如replace和translate用于子字符串替换(替代re.sub()), index和find用于查找操作(替代re.search()和re.match()). </p>
-</li>
-</ol>
+        <h1 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h1><p>你到一个商店买东西，刚好你要的东西没有货，于是你在店员那里留下了你的电话，过了几天店里有货了，店员就打了你的电话，然后你接到电话后就到店里去取了货。在这个例子里，你的电话号码就叫回调函数，你把电话留给店员就叫登记回调函数，店里后来有货了叫做触发了回调关联的事件，店员给你打电话叫做调用回调函数，你到店里去取货叫做响应回调事件。</p>
 
       
     </div>
     
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/05/15/re/">re</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">降临の神呦</a></p>
-        <p><span>发布时间:</span>2017-05-15, 14:21:37</p>
-        <p><span>最后更新:</span>2017-08-06, 14:48:45</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/05/15/re/" title="re">http://yoursite.com/2017/05/15/re/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/05/15/re/　　作者: 降临の神呦" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
     </div>
-
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/07/05/装饰器demo/">
-                    装饰器demo
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/04/23/如何添加hexo标签/">
-                    如何添加hexo标签
-                </a>
-            </div>
-        
-    </nav>
-
+    
+  </div>
   
 </article>
 
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用方法compile-match-findall-finditer-search-split-sub"><span class="toc-number">1.</span> <span class="toc-text">常用方法compile, match, findall, finditer, search, split, sub.</span></a></li></ol>
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
-        </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"re　| 神の宫殿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
-</div>
 
 
 
@@ -411,35 +313,13 @@
 
 
 
-    
 
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2017/07/05/装饰器demo/" title="上一篇: 装饰器demo">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2017/04/23/如何添加hexo标签/" title="下一篇: 如何添加hexo标签">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/06/POST和GET的区别/">POST和GET的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/06/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/06/pipeline管道/">pipeline管道</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/26/Nginx/">Nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/25/uwsgi-部署/">UWSGI</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/06/Python与流行数据库交互/">Python与流行数据库交互</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/05/装饰器demo/">装饰器demo</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/15/re/">re</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/如何添加hexo标签/">如何添加hexo标签</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/09/生成ssh密钥/">生成ssh密钥</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/06/回调函数/">回调函数</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 </div>
       <footer id="footer">
     <div class="outer">
