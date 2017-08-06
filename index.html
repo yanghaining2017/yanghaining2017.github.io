@@ -416,7 +416,8 @@
 </ol>
 </li>
 <li><p>Nginx+uWSGI+应用程序的架构：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">st=&gt;operation: 应用程序(app)</div><div class="line">a=&gt;operation: UWSGI</div><div class="line">b=&gt;operation: 反向代理(Nginx)</div><div class="line">c=&gt;operation: 浏览器</div><div class="line">st-&gt;a-&gt;b-&gt;c</div></pre></td></tr></table></figure>
+<div id="flowchart-0" class="flow-chart"></div>
+
 </li>
 </ul>
 <hr>
@@ -448,6 +449,11 @@
 </ul>
 <blockquote>
 <p>kill -HUP 主进程号</p>
+<p><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>operation: 应用程序(app)
+a=>operation: UWSGI
+b=>operation: 反向代理(Nginx)
+c=>operation: 浏览器
+st->a->b->c</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
 </blockquote>
 
       
