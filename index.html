@@ -182,7 +182,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
                     </div>
                 </section>
                 
@@ -353,6 +353,535 @@
       
           
         
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Nginx" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/26/Nginx/" class="article-date">
+      <time datetime="2017-07-26T06:31:40.000Z" itemprop="datePublished">2017-07-26</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/26/Nginx/">Nginx</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><ul>
+<li><p>Nginx是一个反向代理服务器 </p>
+<ol>
+<li>正向代理，例如FQ用的代理服务器就是正向代理，浏览器主动请求代理服务器，代理服务器转发请求到对应的目标服务器</li>
+<li>反向代理，部署在Web服务器上，代理所有外部网络对内部网络的访问。浏览器访问服务器，必须经过这个代理，是被动的。 </li>
+<li>正向代理的主动方是客户端，反向代理的主动方是Web服务器。</li>
+</ol>
+</li>
+<li><p>Nginx+uWSGI+应用程序的架构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">st=&gt;operation: 应用程序(app)</div><div class="line">a=&gt;operation: UWSGI</div><div class="line">b=&gt;operation: 反向代理(Nginx)</div><div class="line">c=&gt;operation: 浏览器</div><div class="line">st-&gt;a-&gt;b-&gt;c</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Install</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install nginx</div></pre></td></tr></table></figure>
+<ul>
+<li>Usage</li>
+</ul>
+<blockquote>
+<p>nginx -s reload  ：修改配置后重新加载生效<br>nginx -s reopen  ：重新打开日志文件<br>nginx -t -c /path/to/nginx.conf 测试nginx配置文件是否正确</p>
+</blockquote>
+<ul>
+<li>Stop</li>
+</ul>
+<blockquote>
+<p>nginx -s stop  :快速停止nginx<br>         quit  ：完整有序的停止nginx<br>ps -ef | grep nginx</p>
+<p>kill -QUIT 主进程号     ：从容停止Nginx<br>kill -TERM 主进程号     ：快速停止Nginx<br>pkill -9 nginx          ：强制停止Nginx</p>
+</blockquote>
+<ul>
+<li>start</li>
+</ul>
+<blockquote>
+<p>nginx -c /path/to/nginx.conf</p>
+</blockquote>
+<ul>
+<li>restart</li>
+</ul>
+<blockquote>
+<p>kill -HUP 主进程号</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-uwsgi-部署" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/25/uwsgi-部署/" class="article-date">
+      <time datetime="2017-07-25T01:22:33.000Z" itemprop="datePublished">2017-07-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/25/uwsgi-部署/">UWSGI</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="WSGI"><a href="#WSGI" class="headerlink" title="WSGI"></a>WSGI</h2><ul>
+<li>在生产环境中使用WSGI作为python web的服务器</li>
+<li>WSGI：全拼为Python Web Server Gateway Interface，Python Web服务器网关接口，是Python应用程序或框架和Web服务器之间的一种接口，被广泛接受。WSGI没有官方的实现, 因为WSGI更像一个协议，只要遵照这些协议，WSGI应用(Application)都可以在任何服务器(Server)上运行</li>
+<li>项目默认会生成一个wsgi.py文件，确定了settings模块、application对象<ul>
+<li>application对象：在Python模块中使用application对象与应用服务器交互</li>
+<li>settings模块：用于进行项目配置</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="UWSGI"><a href="#UWSGI" class="headerlink" title="UWSGI"></a>UWSGI</h2><ul>
+<li>uWSGI实现了WSGI的所有接口，是一个快速、自我修复、开发人员和系统管理员友好的服务器</li>
+<li><p>uWSGI代码完全用C编写，效率高、性能稳定</p>
+</li>
+<li><p>安装uWSGI</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install uwsgi</div></pre></td></tr></table></figure>
+<ul>
+<li>配置uWSGI，在项目目录下创建uwsgi.ini文件，配置如下</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[uwsgi]</div><div class="line">#使用nginx连接时使用</div><div class="line">#socket=127.0.0.1:8080</div><div class="line">#直接做web服务器使用</div><div class="line">http=127.0.0.1:8080</div><div class="line">#项目目录</div><div class="line">chdir=/</div><div class="line">#项目中wsgi.py文件的目录，相对于项目目录</div><div class="line">wsgi-file=/wsgi.py</div><div class="line">processes=4</div><div class="line">threads=2</div><div class="line">master=True</div><div class="line">pidfile=uwsgi.pid</div><div class="line">daemonize=uwsgi.log</div></pre></td></tr></table></figure>
+<ul>
+<li><p>启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uwsgi --ini uwsgi.ini</div></pre></td></tr></table></figure>
+</li>
+<li><p>查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps ajx|grep uwsgi</div></pre></td></tr></table></figure>
+</li>
+<li><p>停止</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uwsgi --stop uwsgi.pid</div></pre></td></tr></table></figure>
+</li>
+<li><p>浏览</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://localhost:8080/</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Python与流行数据库交互" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/06/Python与流行数据库交互/" class="article-date">
+      <time datetime="2017-07-06T03:00:53.000Z" itemprop="datePublished">2017-07-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/06/Python与流行数据库交互/">Python与流行数据库交互</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="MYSQL"><a href="#MYSQL" class="headerlink" title="MYSQL"></a>MYSQL</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line"></div><div class="line">from MySQLdb import connect</div><div class="line"></div><div class="line">class HuanqiuMysql(object):</div><div class="line">    def __init__(self):</div><div class="line">        self.con = connect(&quot;localhost&quot;, &apos;root&apos;, &apos;mysql&apos;, &apos;huanqiu_spider&apos;,</div><div class="line">                                   charset=&quot;utf8&quot;, use_unicode=True)</div><div class="line">        self.cursor = self.con.cursor()</div><div class="line"></div><div class="line">    def process_item(self, item, spider):</div><div class="line">        insert_sql = &quot;&quot;&quot;</div><div class="line">                    insert into sub_item(title, img_url, img_path, link, text)</div><div class="line">                    VALUES (%s, %s, %s, %s, %s)</div><div class="line">                &quot;&quot;&quot;</div><div class="line"></div><div class="line">        self.cursor.execute(insert_sql, (item[&apos;title&apos;], item[&apos;img_url&apos;],</div><div class="line">            item[&apos;img_path&apos;], item[&apos;link&apos;], item[&apos;desc&apos;]))</div><div class="line">        self.con.commit()</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="REDIS"><a href="#REDIS" class="headerlink" title="REDIS"></a>REDIS</h2><ul>
+<li><p>demo1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">from redis import *</div><div class="line"></div><div class="line">if __name__==&quot;__main__&quot;:</div><div class="line">    try:</div><div class="line">        #创建StrictRedis对象，与redis服务器建立连接</div><div class="line">        sr=StrictRedis()</div><div class="line">        #获取键py1的值</div><div class="line">        result = sr.get(&apos;py1&apos;)</div><div class="line">        #输出键的值，如果键不存在则返回None</div><div class="line">        print result</div><div class="line">    except Exception as e:</div><div class="line">        print e</div></pre></td></tr></table></figure>
+</li>
+<li><p>demo2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line">from redis import *</div><div class="line"></div><div class="line">if __name__==&quot;__main__&quot;:</div><div class="line">    try:</div><div class="line">        #创建StrictRedis对象，与redis服务器建立连接</div><div class="line">        sr=StrictRedis()</div><div class="line">        #设置键py1的值，如果键已经存在则进行修改，如果键不存在则进行添加</div><div class="line">        result = sr.set(&apos;py1&apos;,&apos;hr&apos;)</div><div class="line">        #输出响应结果，如果操作成功则返回True，否则返回False</div><div class="line">        print result</div><div class="line">    except Exception as e:</div><div class="line">        print e</div></pre></td></tr></table></figure>
+</li>
+<li><p>demo3:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">from redis import *</div><div class="line"></div><div class="line">if __name__==&quot;__main__&quot;:</div><div class="line">    try:</div><div class="line">        #创建StrictRedis对象，与redis服务器建立连接</div><div class="line">        sr=StrictRedis()</div><div class="line">        #设置键py1的值，如果键已经存在则进行修改，如果键不存在则进行添加</div><div class="line">        result = sr.delete(&apos;py1&apos;)</div><div class="line">        #输出响应结果，如果删除成功则返回受影响的键数，否则则返回0</div><div class="line">        print result</div><div class="line">    except Exception as e:</div><div class="line">        print e</div></pre></td></tr></table></figure>
+</li>
+<li><p>demo4:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line">from redis import *</div><div class="line"></div><div class="line">if __name__==&quot;__main__&quot;:</div><div class="line">    try:</div><div class="line">        #创建StrictRedis对象，与redis服务器建立连接</div><div class="line">        sr=StrictRedis()</div><div class="line">        #获取所有的键</div><div class="line">        result=sr.keys()</div><div class="line">        #输出响应结果，所有的键构成一个列表，如果没有键则返回空列表</div><div class="line">        print result</div><div class="line">    except Exception as e:</div><div class="line">        print e</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="MONGODB"><a href="#MONGODB" class="headerlink" title="MONGODB"></a>MONGODB</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">import pymongo</div><div class="line"></div><div class="line"># 获取setting主机名、端口号和数据库名</div><div class="line">host = &apos;localhost&apos;</div><div class="line">port = 27017</div><div class="line">dbname = &apos;douban_test&apos;</div><div class="line"></div><div class="line"># pymongo.MongoClient(host, port) 创建MongoDB链接</div><div class="line">client = pymongo.MongoClient(host=host,port=port)</div><div class="line"></div><div class="line"># 指向指定的数据库</div><div class="line">mdb = client[dbname]</div><div class="line"># 获取数据库里存放数据的表名</div><div class="line">post = mdb[&apos;douban3&apos;]</div><div class="line"></div><div class="line"></div><div class="line">data = &#123;&quot;title&quot;: &quot;肖申克的救赎&quot;, &apos;url&apos;: &apos;www.baidu.com&apos;&#125;</div><div class="line"># 向指定的表里添加数据</div><div class="line">post.insert_one(data)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-装饰器demo" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/05/装饰器demo/" class="article-date">
+      <time datetime="2017-07-05T11:17:11.000Z" itemprop="datePublished">2017-07-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/05/装饰器demo/">装饰器demo</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"># encoding=utf-8</div><div class="line">from functools import wraps</div><div class="line"></div><div class="line">def decorator(func):</div><div class="line">	@wraps(func)</div><div class="line">	def inner(*args, **kwargs):</div><div class="line">		return func(*args, **kwargs)</div><div class="line">	return inner</div><div class="line"></div><div class="line"></div><div class="line">@decorator</div><div class="line">def test():</div><div class="line">	print(124)</div><div class="line"></div><div class="line">print(test)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/python基础/">python基础</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-re" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/15/re/" class="article-date">
+      <time datetime="2017-05-15T06:21:37.000Z" itemprop="datePublished">2017-05-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/15/re/">re</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="常用方法compile-match-findall-finditer-search-split-sub"><a href="#常用方法compile-match-findall-finditer-search-split-sub" class="headerlink" title="常用方法compile, match, findall, finditer, search, split, sub."></a>常用方法compile, match, findall, finditer, search, split, sub.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">import re</div><div class="line">url = &quot;http://10.128.39.48:8058/net_command&quot;</div><div class="line"># 编译一个正则表达式对象reg, </div><div class="line"># reg有多个方法可以调用,如re.match(), re.findall(), re.sub()等</div><div class="line">reg = re.compile(&apos;^http:\/\/(.*?):(\d+?)\/net_command&apos;)</div><div class="line"># 针对url,执行正则匹配,然后通过group()来取得匹配结果</div><div class="line">result = reg.match(url)</div><div class="line">result.group()</div><div class="line">&apos;http://10.128.39.48:8058/net_command&apos;</div><div class="line">result.group(0)</div><div class="line">&apos;http://10.128.39.48:8058/net_command&apos;</div><div class="line">result.group(1)</div><div class="line">&apos;10.128.39.48&apos;</div><div class="line">result.group(2)</div><div class="line">&apos;8058&apos;</div></pre></td></tr></table></figure>
+<ol>
+<li>compile<br>预先编译好正则表达式,可为之后的重复使用节省时间.</li>
+<li><p>re.match(‘p’, ‘python’) 会在字符串的开头匹配正则表达式: 如果开头即不符合,则匹配失败.<br>而re.search(‘net_command’, url)会扫描整个字符串,直到找到第一个匹配结果返回. 二者的匹配结果也可通过group()方法来获取. </p>
+</li>
+<li><p>re.findall(‘net_command’, url) 会查找所有匹配结果,并返回结果列表. 而re.finditer()找到匹配结果,将它们作为一个迭代器返回.</p>
+</li>
+<li><p>re.sub(‘net_command’, ‘command_net’, url) 用于匹配结果的替换操作, 等同于 url.replace(‘net_command’, ‘command_net’). sub()方法的第四个参数表示替换次数,默认0为全部替换. </p>
+</li>
+<li><p>re.split(‘/‘, url), 等同于 url.split(‘/‘), split()方法的第三个参数表示分割次数,默认0为全部. </p>
+</li>
+<li><p>start(), end(), 分别表示匹配结果的开始和结束索引. 而span()则返回开始和结束索引组成的元组. </p>
+</li>
+<li><p>正则表达式参数, re.VERBOSE(或re.X)可使正则表达式结构化,形式更易读. re.DOTALL(或re.S)使得 . 匹配包括换行符在内的任意字符. re.IGNORECASE(或re.I)使得匹配对大小写不敏感. re.MULTILINE(或re.M)使得多行匹配生效,影响^和$的首尾匹配. </p>
+</li>
+<li><p>相比于re模块,我们应该尽可能地使用字符串自身的一些操作方法, 如replace和translate用于子字符串替换(替代re.sub()), index和find用于查找操作(替代re.search()和re.match()). </p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-如何添加hexo标签" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/23/如何添加hexo标签/" class="article-date">
+      <time datetime="2017-04-23T01:40:46.000Z" itemprop="datePublished">2017-04-23</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/23/如何添加hexo标签/">如何添加hexo标签</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: title #文章标题</div><div class="line">date: 2016-06-01 23:47:44 #文章生成时间</div><div class="line">tags: </div><div class="line">     - 标签1</div><div class="line">     - 标签2</div><div class="line"> description: #页面描述 可以省略</div><div class="line">---</div></pre></td></tr></table></figure>
+<hr>
+<p>部署github：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-deployer-git</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Hexo教程/">Hexo教程</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-生成ssh密钥" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/09/生成ssh密钥/" class="article-date">
+      <time datetime="2017-03-09T06:01:32.000Z" itemprop="datePublished">2017-03-09</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/09/生成ssh密钥/">生成ssh密钥</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;用户名&quot;</div></pre></td></tr></table></figure>
+
       
     </div>
     

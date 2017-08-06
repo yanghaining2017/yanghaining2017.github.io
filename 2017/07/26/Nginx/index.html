@@ -15,12 +15,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="神の宫殿">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="Nginx Nginx是一个反向代理服务器   正向代理，例如FQ用的代理服务器就是正向代理，浏览器主动请求代理服务器，代理服务器转发请求到对应的目标服务器 反向代理，部署在Web服务器上，代理所有外部网络对内部网络的访问。浏览器访问服务器，必须经过这个代理，是被动的。  正向代理的主动方是客户端，反向代理的主动方是Web服务器。   Nginx+uWSGI+应用程序的架构： 12345st=&amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx">
+<meta property="og:url" content="http://yoursite.com/2017/07/26/Nginx/index.html">
 <meta property="og:site_name" content="神の宫殿">
+<meta property="og:description" content="Nginx Nginx是一个反向代理服务器   正向代理，例如FQ用的代理服务器就是正向代理，浏览器主动请求代理服务器，代理服务器转发请求到对应的目标服务器 反向代理，部署在Web服务器上，代理所有外部网络对内部网络的访问。浏览器访问服务器，必须经过这个代理，是被动的。  正向代理的主动方是客户端，反向代理的主动方是Web服务器。   Nginx+uWSGI+应用程序的架构： 12345st=&amp;g">
+<meta property="og:updated_time" content="2017-08-06T06:48:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="神の宫殿">
+<meta name="twitter:title" content="Nginx">
+<meta name="twitter:description" content="Nginx Nginx是一个反向代理服务器   正向代理，例如FQ用的代理服务器就是正向代理，浏览器主动请求代理服务器，代理服务器转发请求到对应的目标服务器 反向代理，部署在Web服务器上，代理所有外部网络对内部网络的访问。浏览器访问服务器，必须经过这个代理，是被动的。  正向代理的主动方是客户端，反向代理的主动方是Web服务器。   Nginx+uWSGI+应用程序的架构： 12345st=&amp;g">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives | 神の宫殿</title>
+<title>Nginx | 神の宫殿</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,8 +66,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -252,308 +256,209 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Nginx" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2017/07/26/Nginx/" class="article-date">
+      <time datetime="2017-07-26T06:31:40.000Z" itemprop="datePublished">2017-07-26</time>
+</a>
+
+
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Nginx
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/08/06/hello-world/" class="archive-article-date">
-      <time datetime="2017-08-06T04:11:03.917Z" itemprop="datePublished">08-06</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
+        <h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><ul>
+<li><p>Nginx是一个反向代理服务器 </p>
+<ol>
+<li>正向代理，例如FQ用的代理服务器就是正向代理，浏览器主动请求代理服务器，代理服务器转发请求到对应的目标服务器</li>
+<li>反向代理，部署在Web服务器上，代理所有外部网络对内部网络的访问。浏览器访问服务器，必须经过这个代理，是被动的。 </li>
+<li>正向代理的主动方是客户端，反向代理的主动方是Web服务器。</li>
+</ol>
+</li>
+<li><p>Nginx+uWSGI+应用程序的架构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">st=&gt;operation: 应用程序(app)</div><div class="line">a=&gt;operation: UWSGI</div><div class="line">b=&gt;operation: 反向代理(Nginx)</div><div class="line">c=&gt;operation: 浏览器</div><div class="line">st-&gt;a-&gt;b-&gt;c</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Install</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install nginx</div></pre></td></tr></table></figure>
+<ul>
+<li>Usage</li>
+</ul>
+<blockquote>
+<p>nginx -s reload  ：修改配置后重新加载生效<br>nginx -s reopen  ：重新打开日志文件<br>nginx -t -c /path/to/nginx.conf 测试nginx配置文件是否正确</p>
+</blockquote>
+<ul>
+<li>Stop</li>
+</ul>
+<blockquote>
+<p>nginx -s stop  :快速停止nginx<br>         quit  ：完整有序的停止nginx<br>ps -ef | grep nginx</p>
+<p>kill -QUIT 主进程号     ：从容停止Nginx<br>kill -TERM 主进程号     ：快速停止Nginx<br>pkill -9 nginx          ：强制停止Nginx</p>
+</blockquote>
+<ul>
+<li>start</li>
+</ul>
+<blockquote>
+<p>nginx -c /path/to/nginx.conf</p>
+</blockquote>
+<ul>
+<li>restart</li>
+</ul>
+<blockquote>
+<p>kill -HUP 主进程号</p>
+</blockquote>
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/08/06/pipeline管道/" class="archive-article-date">
-      <time datetime="2017-08-06T02:58:37.000Z" itemprop="datePublished">08-06</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/06/pipeline管道/">pipeline管道</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/07/26/Nginx/" class="archive-article-date">
-      <time datetime="2017-07-26T06:31:40.000Z" itemprop="datePublished">07-26</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/26/Nginx/">Nginx</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/07/25/uwsgi-部署/" class="archive-article-date">
-      <time datetime="2017-07-25T01:22:33.000Z" itemprop="datePublished">07-25</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/25/uwsgi-部署/">UWSGI</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/07/06/Python与流行数据库交互/" class="archive-article-date">
-      <time datetime="2017-07-06T03:00:53.000Z" itemprop="datePublished">07-06</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/06/Python与流行数据库交互/">Python与流行数据库交互</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+      
     </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/07/05/装饰器demo/" class="archive-article-date">
-      <time datetime="2017-07-05T11:17:11.000Z" itemprop="datePublished">07-05</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/05/装饰器demo/">装饰器demo</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/python基础/">python基础</a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/07/26/Nginx/">Nginx</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">降临の神呦</a></p>
+        <p><span>发布时间:</span>2017-07-26, 14:31:40</p>
+        <p><span>最后更新:</span>2017-08-06, 14:48:45</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/07/26/Nginx/" title="Nginx">http://yoursite.com/2017/07/26/Nginx/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/07/26/Nginx/　　作者: 降临の神呦" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/08/06/pipeline管道/">
+                    pipeline管道
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/07/25/uwsgi-部署/">
+                    UWSGI
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx"><span class="toc-number">1.</span> <span class="toc-text">Nginx</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Nginx　| 神の宫殿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/08/06/pipeline管道/" title="上一篇: pipeline管道">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/07/25/uwsgi-部署/" title="下一篇: UWSGI">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/05/15/re/" class="archive-article-date">
-      <time datetime="2017-05-15T06:21:37.000Z" itemprop="datePublished">05-15</time>
-</a>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/06/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/06/pipeline管道/">pipeline管道</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/26/Nginx/">Nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/25/uwsgi-部署/">UWSGI</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/06/Python与流行数据库交互/">Python与流行数据库交互</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/05/装饰器demo/">装饰器demo</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/15/re/">re</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/如何添加hexo标签/">如何添加hexo标签</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/09/生成ssh密钥/">生成ssh密钥</a></li></ul>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/15/re/">re</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/04/23/如何添加hexo标签/" class="archive-article-date">
-      <time datetime="2017-04-23T01:40:46.000Z" itemprop="datePublished">04-23</time>
-</a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/23/如何添加hexo标签/">如何添加hexo标签</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Hexo教程/">Hexo教程</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/03/09/生成ssh密钥/" class="archive-article-date">
-      <time datetime="2017-03-09T06:01:32.000Z" itemprop="datePublished">03-09</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/09/生成ssh密钥/">生成ssh密钥</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

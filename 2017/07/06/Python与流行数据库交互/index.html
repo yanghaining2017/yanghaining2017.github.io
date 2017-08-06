@@ -15,13 +15,17 @@
 
 
 
+<meta name="description" content="MYSQL  12345678910111213141516171819#coding=utf-8from MySQLdb import connectclass HuanqiuMysql(object):    def __init__(self):        self.con = connect(&amp;quot;localhost&amp;quot;, &amp;apos;root&amp;apos;, &amp;apos;">
+<meta name="keywords" content="数据库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pipeline管道">
-<meta property="og:url" content="http://yoursite.com/2017/08/06/pipeline管道/index.html">
+<meta property="og:title" content="Python与流行数据库交互">
+<meta property="og:url" content="http://yoursite.com/2017/07/06/Python与流行数据库交互/index.html">
 <meta property="og:site_name" content="神の宫殿">
-<meta property="og:updated_time" content="2017-08-06T02:58:37.275Z">
+<meta property="og:description" content="MYSQL  12345678910111213141516171819#coding=utf-8from MySQLdb import connectclass HuanqiuMysql(object):    def __init__(self):        self.con = connect(&amp;quot;localhost&amp;quot;, &amp;apos;root&amp;apos;, &amp;apos;">
+<meta property="og:updated_time" content="2017-08-06T06:48:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pipeline管道">
+<meta name="twitter:title" content="Python与流行数据库交互">
+<meta name="twitter:description" content="MYSQL  12345678910111213141516171819#coding=utf-8from MySQLdb import connectclass HuanqiuMysql(object):    def __init__(self):        self.con = connect(&amp;quot;localhost&amp;quot;, &amp;apos;root&amp;apos;, &amp;apos;">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -53,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>pipeline管道 | 神の宫殿</title>
+<title>Python与流行数据库交互 | 神の宫殿</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -253,11 +257,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-pipeline管道" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Python与流行数据库交互" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/08/06/pipeline管道/" class="article-date">
-      <time datetime="2017-08-06T02:58:37.000Z" itemprop="datePublished">2017-08-06</time>
+      <a href="/2017/07/06/Python与流行数据库交互/" class="article-date">
+      <time datetime="2017-07-06T03:00:53.000Z" itemprop="datePublished">2017-07-06</time>
 </a>
 
 
@@ -272,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      pipeline管道
+      Python与流行数据库交互
     </h1>
   
 
@@ -282,6 +286,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -289,7 +297,25 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h2 id="MYSQL"><a href="#MYSQL" class="headerlink" title="MYSQL"></a>MYSQL</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line"></div><div class="line">from MySQLdb import connect</div><div class="line"></div><div class="line">class HuanqiuMysql(object):</div><div class="line">    def __init__(self):</div><div class="line">        self.con = connect(&quot;localhost&quot;, &apos;root&apos;, &apos;mysql&apos;, &apos;huanqiu_spider&apos;,</div><div class="line">                                   charset=&quot;utf8&quot;, use_unicode=True)</div><div class="line">        self.cursor = self.con.cursor()</div><div class="line"></div><div class="line">    def process_item(self, item, spider):</div><div class="line">        insert_sql = &quot;&quot;&quot;</div><div class="line">                    insert into sub_item(title, img_url, img_path, link, text)</div><div class="line">                    VALUES (%s, %s, %s, %s, %s)</div><div class="line">                &quot;&quot;&quot;</div><div class="line"></div><div class="line">        self.cursor.execute(insert_sql, (item[&apos;title&apos;], item[&apos;img_url&apos;],</div><div class="line">            item[&apos;img_path&apos;], item[&apos;link&apos;], item[&apos;desc&apos;]))</div><div class="line">        self.con.commit()</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="REDIS"><a href="#REDIS" class="headerlink" title="REDIS"></a>REDIS</h2><ul>
+<li><p>demo1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">from redis import *</div><div class="line"></div><div class="line">if __name__==&quot;__main__&quot;:</div><div class="line">    try:</div><div class="line">        #创建StrictRedis对象，与redis服务器建立连接</div><div class="line">        sr=StrictRedis()</div><div class="line">        #获取键py1的值</div><div class="line">        result = sr.get(&apos;py1&apos;)</div><div class="line">        #输出键的值，如果键不存在则返回None</div><div class="line">        print result</div><div class="line">    except Exception as e:</div><div class="line">        print e</div></pre></td></tr></table></figure>
+</li>
+<li><p>demo2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line">from redis import *</div><div class="line"></div><div class="line">if __name__==&quot;__main__&quot;:</div><div class="line">    try:</div><div class="line">        #创建StrictRedis对象，与redis服务器建立连接</div><div class="line">        sr=StrictRedis()</div><div class="line">        #设置键py1的值，如果键已经存在则进行修改，如果键不存在则进行添加</div><div class="line">        result = sr.set(&apos;py1&apos;,&apos;hr&apos;)</div><div class="line">        #输出响应结果，如果操作成功则返回True，否则返回False</div><div class="line">        print result</div><div class="line">    except Exception as e:</div><div class="line">        print e</div></pre></td></tr></table></figure>
+</li>
+<li><p>demo3:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">from redis import *</div><div class="line"></div><div class="line">if __name__==&quot;__main__&quot;:</div><div class="line">    try:</div><div class="line">        #创建StrictRedis对象，与redis服务器建立连接</div><div class="line">        sr=StrictRedis()</div><div class="line">        #设置键py1的值，如果键已经存在则进行修改，如果键不存在则进行添加</div><div class="line">        result = sr.delete(&apos;py1&apos;)</div><div class="line">        #输出响应结果，如果删除成功则返回受影响的键数，否则则返回0</div><div class="line">        print result</div><div class="line">    except Exception as e:</div><div class="line">        print e</div></pre></td></tr></table></figure>
+</li>
+<li><p>demo4:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">#coding=utf-8</div><div class="line">from redis import *</div><div class="line"></div><div class="line">if __name__==&quot;__main__&quot;:</div><div class="line">    try:</div><div class="line">        #创建StrictRedis对象，与redis服务器建立连接</div><div class="line">        sr=StrictRedis()</div><div class="line">        #获取所有的键</div><div class="line">        result=sr.keys()</div><div class="line">        #输出响应结果，所有的键构成一个列表，如果没有键则返回空列表</div><div class="line">        print result</div><div class="line">    except Exception as e:</div><div class="line">        print e</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="MONGODB"><a href="#MONGODB" class="headerlink" title="MONGODB"></a>MONGODB</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">import pymongo</div><div class="line"></div><div class="line"># 获取setting主机名、端口号和数据库名</div><div class="line">host = &apos;localhost&apos;</div><div class="line">port = 27017</div><div class="line">dbname = &apos;douban_test&apos;</div><div class="line"></div><div class="line"># pymongo.MongoClient(host, port) 创建MongoDB链接</div><div class="line">client = pymongo.MongoClient(host=host,port=port)</div><div class="line"></div><div class="line"># 指向指定的数据库</div><div class="line">mdb = client[dbname]</div><div class="line"># 获取数据库里存放数据的表名</div><div class="line">post = mdb[&apos;douban3&apos;]</div><div class="line"></div><div class="line"></div><div class="line">data = &#123;&quot;title&quot;: &quot;肖申克的救赎&quot;, &apos;url&apos;: &apos;www.baidu.com&apos;&#125;</div><div class="line"># 向指定的表里添加数据</div><div class="line">post.insert_one(data)</div></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -297,13 +323,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/08/06/pipeline管道/">pipeline管道</a></p>
+        <p><span>本文标题:</span><a href="/2017/07/06/Python与流行数据库交互/">Python与流行数据库交互</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">降临の神呦</a></p>
-        <p><span>发布时间:</span>2017-08-06, 10:58:37</p>
-        <p><span>最后更新:</span>2017-08-06, 10:58:37</p>
+        <p><span>发布时间:</span>2017-07-06, 11:00:53</p>
+        <p><span>最后更新:</span>2017-08-06, 14:48:45</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/08/06/pipeline管道/" title="pipeline管道">http://yoursite.com/2017/08/06/pipeline管道/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/08/06/pipeline管道/　　作者: 降临の神呦" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/07/06/Python与流行数据库交互/" title="Python与流行数据库交互">http://yoursite.com/2017/07/06/Python与流行数据库交互/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/07/06/Python与流行数据库交互/　　作者: 降临の神呦" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -316,15 +342,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/08/06/hello-world/">
-                    Hello World
+                <a href="/2017/07/25/uwsgi-部署/">
+                    UWSGI
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/07/26/Nginx/">
-                    Nginx
+                <a href="/2017/07/05/装饰器demo/">
+                    装饰器demo
                 </a>
             </div>
         
@@ -336,7 +362,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MYSQL"><span class="toc-number">1.</span> <span class="toc-text">MYSQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#REDIS"><span class="toc-number">2.</span> <span class="toc-text">REDIS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MONGODB"><span class="toc-number">3.</span> <span class="toc-text">MONGODB</span></a></li></ol>
         
     </div>
     <style>
@@ -372,7 +398,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"pipeline管道　| 神の宫殿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Python与流行数据库交互　| 神の宫殿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -392,7 +418,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/08/06/hello-world/" title="上一篇: Hello World">
+            <a href="/2017/07/25/uwsgi-部署/" title="上一篇: UWSGI">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -400,7 +426,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/07/26/Nginx/" title="下一篇: Nginx">
+            <a href="/2017/07/05/装饰器demo/" title="下一篇: 装饰器demo">
                 <i class="fa fa-angle-right"></i>
             </a>
         
