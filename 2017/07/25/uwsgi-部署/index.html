@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="神の宫殿">
 <meta property="og:description" content="WSGI 在生产环境中使用WSGI作为python web的服务器 WSGI：全拼为Python Web Server Gateway Interface，Python Web服务器网关接口，是Python应用程序或框架和Web服务器之间的一种接口，被广泛接受。WSGI没有官方的实现, 因为WSGI更像一个协议，只要遵照这些协议，WSGI应用(Application)都可以在任何服务器(Serve">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-06T06:48:45.000Z">
+<meta property="og:updated_time" content="2017-08-10T09:40:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UWSGI">
 <meta name="twitter:description" content="WSGI 在生产环境中使用WSGI作为python web的服务器 WSGI：全拼为Python Web Server Gateway Interface，Python Web服务器网关接口，是Python应用程序或框架和Web服务器之间的一种接口，被广泛接受。WSGI没有官方的实现, 因为WSGI更像一个协议，只要遵照这些协议，WSGI应用(Application)都可以在任何服务器(Serve">
@@ -360,21 +360,25 @@
 <ul>
 <li>配置uWSGI，在项目目录下创建uwsgi.ini文件，配置如下</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[uwsgi]</div><div class="line">#使用nginx连接时使用</div><div class="line">#socket=127.0.0.1:8080</div><div class="line">#直接做web服务器使用</div><div class="line">http=127.0.0.1:8080</div><div class="line">#项目目录</div><div class="line">chdir=/</div><div class="line">#项目中wsgi.py文件的目录，相对于项目目录</div><div class="line">wsgi-file=/wsgi.py</div><div class="line">processes=4</div><div class="line">threads=2</div><div class="line">master=True</div><div class="line">pidfile=uwsgi.pid</div><div class="line">daemonize=uwsgi.log</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">[uwsgi]</div><div class="line">http-socket = 127.0.0.1:5000</div><div class="line">processes = 4</div><div class="line">threads = 2</div><div class="line">master = true</div><div class="line">max-request s= 5000</div><div class="line">pythonpath = /</div><div class="line">module = flask_test</div><div class="line">callable = app</div><div class="line">memory-report = true</div><div class="line"></div><div class="line"></div><div class="line"># chdir = /home/python/Desktop/Django</div><div class="line"># home = /home/python/.virtualenvs/django_py2</div><div class="line"># wsgi-file = /wsgi.py</div><div class="line"># pidfile = uwsgi.pid</div><div class="line"># daemonize = uwsgi.log</div></pre></td></tr></table></figure>
+<p><code>注意：Django在虚拟环境里运行需要添加home路径</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">home = /home/username/.virtualenvs/django_py2</div></pre></td></tr></table></figure>
 <ul>
-<li><p>启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uwsgi --ini uwsgi.ini</div></pre></td></tr></table></figure>
-</li>
-<li><p>查看</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps ajx|grep uwsgi</div></pre></td></tr></table></figure>
-</li>
-<li><p>停止</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uwsgi --stop uwsgi.pid</div></pre></td></tr></table></figure>
-</li>
-<li><p>浏览</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://localhost:8080/</div></pre></td></tr></table></figure>
-</li>
+<li>启动</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uwsgi --ini uwsgi.ini</div></pre></td></tr></table></figure>
+<ul>
+<li>查看</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps ajx|grep uwsgi</div></pre></td></tr></table></figure>
+<ul>
+<li>停止</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uwsgi --stop uwsgi.pid</div></pre></td></tr></table></figure>
+<ul>
+<li>浏览</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://localhost:5000/</div></pre></td></tr></table></figure>
 
       
     </div>
